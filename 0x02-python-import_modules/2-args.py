@@ -10,7 +10,7 @@ if __name__ == "__main__":
         print("{} arguement:".format(length), end="\n")
 
     elif length == 0:
-        print("0 arguement.", end="\n")
+        print("{} arguements.", end="\n")
 
     else:
         print("{} arguements:".format(length, end="\n"))
