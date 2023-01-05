@@ -7,13 +7,13 @@ if __name__ == "__main__":
     length = len(sys.argv) - 1
 
     if length == 0:
-        print("0 arguements.")
+        print("{} arguments.".format(length), end="\n")
 
     elif length == 1:
-        print("1 arguement:")
+        print("{} argument:".format(length), end="\n")
 
     else:
-        print("{} arguements:".format(length))
+        print("{} arguments:".format(length), end="\n")
 
     for i in range(1, len(sys.argv)):
-        print("{}: {}".format(i, sys.argv[i]))
+        print("{}: {}".format(i, sys.argv[i]), end="\n")
