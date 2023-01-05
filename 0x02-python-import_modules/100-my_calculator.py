@@ -16,8 +16,8 @@ if __name__ == "__main__":
         print("Usage: ./100-my_calculator.py <a> <operator> <b>", end="\n")
         sys.exit(1)
 
-    if sys.argv[2] not in list(ops.keys()):
+    if c not in list(ops.keys()):
         print("Unknown operator. Available operators: +, -, * and /", end="\n")
         sys.exit(1)
 
-    print("{} {} {} = {}".format(a, c, b, ops[sys.argv[2]](a, b)), end="\n")
+    print("{} {} {} = {}".format(a, c, b, ops[c](a, b)), end="\n")
