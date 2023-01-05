@@ -7,7 +7,9 @@ if __name__ == "__main__":
 
     length = len(sys.argv) - 1
     a = int(sys.argv[1])
-    b = int(sys.argv[3])
+    b = int(sys.argv[3])i
+    c = sys.argv[2]
+
     ops = {"+": add, "-": sub, "*": mul, "/": div}
 
     if length != 3:
@@ -18,4 +20,4 @@ if __name__ == "__main__":
         print("Unknown operator. Available operators: +, -, * and /", end="\n")
         sys.exit(1)
 
-    print("{} {} {} = {}".format(a, sys.argv[2], b, ops[sys.argv[2]](a, b)), end="\n")
+    print("{} {} {} = {}".format(a, c, b, ops[sys.argv[2]](a, b)), end="\n")
