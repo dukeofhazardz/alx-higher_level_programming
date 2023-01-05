@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 
-#A program that prints the number of and the list of its arguments.
-
 if __name__ == "__main__":
     
     import sys
@@ -12,7 +10,7 @@ if __name__ == "__main__":
         print("{} arguement:".format(length))
 
     elif length == 0:
-        print("{} arguement.".format(length))
+        print("0 arguement.")
 
     else:
         print("{} arguements:".format(length))
