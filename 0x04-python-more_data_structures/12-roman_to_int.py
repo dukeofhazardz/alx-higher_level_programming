@@ -22,8 +22,7 @@ def value(n):
 
 
 def roman_to_int(roman_string):
-    if (roman_string and isinstance(roman_string, str)) or \
-            roman_string not None:
+    if (roman_string and isinstance(roman_string, str)):
 
         res = i = 0
 
