@@ -8,7 +8,8 @@ def matrix_mul(m_a, m_b):
             m_a (list of lists of ints/floats): The first matrix.
             m_b (list of lists of ints/floats): The second matrix.
         Raises:
-            TypeError: If either m_a or m_b is not a list of lists of ints/floats.
+            TypeError: If either m_a or m_b is not a list of lists
+                        of ints/floats.
             TypeError: If either m_a or m_b is empty.
             TypeError: If either m_a or m_b has different-sized rows.
             ValueError: If m_a and m_b cannot be multiplied.
@@ -32,11 +33,11 @@ def matrix_mul(m_a, m_b):
         raise TypeError("m_b must be a list of lists")
 
     if not all((isinstance(ele, int) or isinstance(ele, float))
-             for ele in [num for row in m_a for num in row]):
-         raise TypeError("m_a should contain only integers or floats")
+               for ele in [num for row in m_a for num in row]):
+        raise TypeError("m_a should contain only integers or floats")
     if not all((isinstance(ele, int) or isinstance(ele, float))
-             for ele in [num for row in m_b for num in row]):
-         raise TypeError("m_b should contain only integers or floats")
+               for ele in [num for row in m_b for num in row]):
+        raise TypeError("m_b should contain only integers or floats")
 
     if not all(len(row) == len(m_a[0]) for row in m_a):
         raise TypeError("each row of m_a must should be of the same size")
@@ -59,7 +60,7 @@ def matrix_mul(m_a, m_b):
         for col in inverted_b:
             prod = 0
             for i in range(len(inverted_b[0])):
-                prod += row[i] * col [i]
+                prod += row[i] * col[i]
             new_row.append(prod)
         new_matrix.append(new_row)
 
