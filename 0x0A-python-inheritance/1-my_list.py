@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Defines a class-checking function."""
+
 
 class MyList(list):
     """A class that inherits from 'list'"""
