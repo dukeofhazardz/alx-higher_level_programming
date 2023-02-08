@@ -1,5 +1,3 @@
-#include <Python.h>
-
 /**
  * print_python_list_info - A C function that prints
  *		some basic info about Python lists.
