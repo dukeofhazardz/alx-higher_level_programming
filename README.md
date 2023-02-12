@@ -14,6 +14,7 @@ This repository contains programs written for the higher-level programming and a
 * [0x09-python-everything_is_object](https://github.com/dukeofhazardz/alx-higher_level_programming/tree/master/0x09-python-everything_is_object)
 * [0x0A-python-inheritance](https://github.com/dukeofhazardz/alx-higher_level_programming/tree/master/0x0A-python-inheritance)
 * [0x0B-python-input_output](https://github.com/dukeofhazardz/alx-higher_level_programming/tree/master/0x0B-python-input_output)
+* [0x0C-python-almost_a_circle](https://github.com/dukeofhazardz/alx-higher_level_programming/tree/master/0x0C-python-almost_a_circle)
 ## Authors
 
 - [@dukeofhazardz](https://www.github.com/dukeofhazardz)
