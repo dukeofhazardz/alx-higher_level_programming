@@ -89,47 +89,47 @@ class Rectangle(Base):
                 self.id = args[0]
             elif (length == 2):
                 self.id = args[0]
-                self.__width = args[1]
+                self.width = args[1]
             elif (length == 3):
                 self.id = args[0]
-                self.__width = args[1]
-                self.__height = args[2]
+                self.width = args[1]
+                self.height = args[2]
             elif (length == 4):
                 self.id = args[0]
-                self.__width = args[1]
-                self.__height = args[2]
-                self.__x = args[3]
+                self.width = args[1]
+                self.height = args[2]
+                self.x = args[3]
             elif (length == 5):
                 self.id = args[0]
-                self.__width = args[1]
-                self.__height = args[2]
-                self.__x = args[3]
-                self.__y = args[4]
+                self.width = args[1]
+                self.height = args[2]
+                self.x = args[3]
+                self.y = args[4]
         elif (kwargs):
             for key, value in kwargs.items():
                 if key == "width":
-                    self.__width = value
+                    self.width = value
             for key, value in kwargs.items():
                 if key == "height":
-                    self.__height = value
+                    self.height = value
             for key, value in kwargs.items():
                 if key == "id":
                     self.id = value
             for key, value in kwargs.items():
                 if key == "x":
-                    self.__x = value
+                    self.x = value
             for key, value in kwargs.items():
                 if key == "y":
-                    self.__y = value
+                    self.y = value
 
     def to_dictionary(self):
         """Returns the dictionary representation of the 'Rectangle' class"""
         return {
             'id': self.id,
-            'width': self.__width,
-            'height': self.__height,
-            'x': self.__x,
-            'y': self.__y
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
         }
 
     def __str__(self):
