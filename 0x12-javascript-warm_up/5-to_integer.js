@@ -5,10 +5,8 @@
  * if the first argument can be converted to an integer
  */
 
-import { argv } from 'node:process';
+const num = process.argv[2];
 
-const num = parseInt(argv[2]);
-
-if (typeof num !== 'number' || !Number.isInteger(num)) {
+if (isNaN(num) && !Number.isInteger(num)) {
   console.log('Not a number');
-} else { console.log('My number: ' + num); }
+} else { console.log('My number: ' + parseInt(num)); }

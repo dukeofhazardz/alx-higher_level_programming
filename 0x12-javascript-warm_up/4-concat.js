@@ -5,6 +5,6 @@
  * following format: “ is ”
  */
 
-import { argv } from 'node:process';
+const [firstArg, secondArg] = process.argv.slice(2);
 
-console.log(argv[2] + ' is ' + (argv[3]));
+console.log(firstArg + ' is ' + secondArg);
