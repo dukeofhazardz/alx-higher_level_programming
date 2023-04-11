@@ -6,6 +6,8 @@
 
 import { argv } from 'node:process';
 
-if (argv[2]) {
-  console.log(argv[2]);
+const argument = process.argv.slice(2);
+
+if (argument[0]) {
+  console.log(argument[0]);
 } else { console.log('No argument'); }

@@ -6,9 +6,11 @@
 
 import { argv } from 'node:process';
 
-if (argv[3]) {
+const argCount = process.argv.length - 2;
+
+if (argCount === 2) {
   console.log('Arguments found');
-} else if (argv[2]) {
+} else if (argCount === 1) {
   console.log('Argument found');
 } else {
   console.log('No argument');
