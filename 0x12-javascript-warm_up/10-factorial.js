@@ -5,7 +5,7 @@
  */
 
 function factorial (n) {
-  if (n < 1) {
+  if (n < 1 || !Number.isInteger(n)) {
     return (1);
   }
   return n * factorial(n - 1);
