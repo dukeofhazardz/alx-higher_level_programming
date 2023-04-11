@@ -4,8 +4,6 @@
  * A script that prints a message depending of the number of arguments passed
  */
 
-import { argv } from 'node:process';
-
 const argCount = process.argv.length - 2;
 
 if (argCount === 2) {
