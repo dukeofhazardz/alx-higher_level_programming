@@ -7,16 +7,15 @@
 
 class Square extends require('./5-square') {
   charPrint (c) {
-    if (c) {
-      for (let i = 0; i < this.width; i++) {
-        let rows = '';
-        for (let j = 0; j < this.width; j++) {
-          rows += 'C';
-        }
-        console.log(rows);
+    if (c === undefined) {
+      c = 'X';
+    }
+    for (let i = 0; i < this.width; i++) {
+      let rows = '';
+      for (let j = 0; j < this.width; j++) {
+        rows += c;
       }
-    } else {
-      this.print();
+      console.log(rows);
     }
   }
 }
