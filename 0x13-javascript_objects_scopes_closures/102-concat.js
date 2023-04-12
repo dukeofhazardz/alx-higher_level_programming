@@ -12,7 +12,7 @@ const destFile = process.argv[4];
 
 const stream1 = fs.createReadStream(file1);
 const stream2 = fs.createReadStream(file2);
-const destStream = fs.createWriteStream(destFile, { flags: 'a' });
+const destStream = fs.createWriteStream(destFile);
 
 stream1.pipe(destStream);
 stream2.pipe(destStream);
