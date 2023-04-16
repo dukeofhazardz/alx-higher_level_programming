@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 
-""" A script that changes the name of a State object from
-    the database hbtn_0e_6_usa """
+""" A script that prints all City objects from the database hbtn_0e_14_usa """
 
 import sys
 import sqlalchemy
 from model_state import Base, State
+from model_city import Base, City
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import (create_engine)
 
@@ -19,6 +19,6 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    session.query(State).filter(State.id == 2).update(
-                {State.name: "New Mexico"}, synchronize_session=False)
-    session.commit()
+    for city, state in session.query(City, State).filter(City.state_id == State.id)\
+                                                 .order_by(City.id):
+        print("{}: ({}) {}".format(state.name, city.id, city.name))

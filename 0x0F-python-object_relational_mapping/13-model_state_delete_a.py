@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
-""" A script that changes the name of a State object from
-    the database hbtn_0e_6_usa """
+""" A script that deletes all State objects with a name containing
+    the letter a from the database hbtn_0e_6_usa """
 
 import sys
 import sqlalchemy
@@ -19,6 +19,5 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    session.query(State).filter(State.id == 2).update(
-                {State.name: "New Mexico"}, synchronize_session=False)
+    session.query(State).filter(State.name.contains('a')).delete()
     session.commit()
