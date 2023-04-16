@@ -18,7 +18,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     cursor.execute(f"SELECT * FROM states WHERE name LIKE '{name}' \
-                    ORDER BY states.id ASC")
+                    ORDER BY id ASC")
     states = cursor.fetchall()
 
     count = 0
