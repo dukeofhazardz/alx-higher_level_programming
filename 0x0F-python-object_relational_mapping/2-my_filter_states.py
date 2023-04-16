@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
 
-    cursor.execute(f"SELECT * FROM states WHERE name = '{name}' \
+    cursor.execute(f"SELECT * FROM states WHERE BINARY name = '{name}' \
                     ORDER BY id ASC")
     states = cursor.fetchall()
 
