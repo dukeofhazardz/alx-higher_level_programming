@@ -19,5 +19,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    session.query(State).filter(State.name.contains('a')).delete()
+    letter = session.query(State).filter(State.name.contains('a')).all()
+    for char in letter:
+        session.delete(char)
     session.commit()
+    session.close()
