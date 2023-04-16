@@ -20,10 +20,13 @@ if __name__ == "__main__":
     cursor.execute(f"SELECT c.name FROM cities AS c JOIN states AS s ON \
                     s.id=c.state_id WHERE s.name='{state_name}' \
                     ORDER BY c.id ASC")
-    states = cursor.fetchall()
+    cities = cursor.fetchall()
 
-    '''count = 0
-    while (count < len(states)):
-        print("{}".format(states[count]))
-        count += 1'''
-    print(states)
+    count = len(cities)
+    for city in cities:
+        for i in city:
+            print(i, end="")
+            count -= 1
+            if (count != 0):
+                print(", ", end="")
+    print()
