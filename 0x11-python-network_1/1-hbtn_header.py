@@ -9,6 +9,5 @@ if __name__ == "__main__":
     import sys
 
     link = sys.argv[1]
-    #req = url.Request(link)
     with url.urlopen(link) as response:
         print(dict(response.headers).get('X-Request-Id'))
