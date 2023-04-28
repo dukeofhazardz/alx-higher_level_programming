@@ -1,18 +1,11 @@
 #!/usr/bin/python3
-""" A Python script that takes in a URL, sends a request to the URL
-    and displays the body of the response (decoded in utf-8). """
+""" A Python script that takes fetches https://alx-intranet.hbtn.io/status """
 
 if __name__ == "__main__":
 
-    import urllib.request as url
-    import urllib.error as err
-    import sys
+    import requests
 
-    link = sys.argv[1]
-
-    req = url.Request(link, data)
-    try:
-        with url.urlopen(req) as response:
-            print(response.read().decode('utf-8'))
-    except err.HTTPError as e:
-        print('Error code:', e.code)
+    req = requests.get('https://alx-intranet.hbtn.io/status')
+    print('Body response:')
+    print('\t- type:', type(req.text))
+    print('\t- content:', req.text)
