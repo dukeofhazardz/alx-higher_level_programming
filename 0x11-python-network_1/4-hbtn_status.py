@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     link = sys.argv[1]
 
-    req = url.Request(link)
+    req = url.Request(link, data)
     try:
         with url.urlopen(req) as response:
             print(response.read().decode('utf-8'))

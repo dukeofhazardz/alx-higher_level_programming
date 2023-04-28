@@ -10,7 +10,7 @@ if __name__ == "__main__":
     import sys
 
     link = sys.argv[1]
-    values = {'email' : sys.argv[2]}
+    values = {'email': sys.argv[2]}
 
     data = par.urlencode(values)
     data = data.encode('ascii')
