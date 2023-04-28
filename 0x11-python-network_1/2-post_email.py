@@ -16,4 +16,4 @@ if __name__ == "__main__":
     data = data.encode('ascii')
     req = url.Request(link, data)
     with url.urlopen(req) as response:
-        page = response.read()
+        print(response.read().decode('utf-8'))
