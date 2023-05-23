@@ -16,11 +16,13 @@ request(url, function (error, response, body) {
     const characters = JSON.parse(body).characters;
     const promises = [];
     for (const character of characters) {
-      request(character, function (error, response, body) {
-        if (!error) {
-          console.log(JSON.parse(body).name);
-        }
+      promises.push(new Promise(function (resolve, reject) {
+	request(character, function (error, response, body) {
+	  if (!error) {
+	    console.log(JSON.parse(body).name);
+	 }
       });
+      }));
     }
     Promise.all(promises).then((a) => {
       for (const i of a) { console.log(i); }
