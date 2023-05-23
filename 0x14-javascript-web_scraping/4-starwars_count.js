@@ -12,17 +12,10 @@ request(url, function (error, response, body) {
     console.log(error);
   } else {
     const result = JSON.parse(body).results;
-    const characters = result[1].characters;
-
-    const character = characters.find(link => link.endsWith('/18/'));
-
-    request(character, function (error, response, body) {
-      if (error) {
-        console.log(error);
-      } else {
-        const noFilms = JSON.parse(body).films.length;
-        console.log(noFilms);
-      }
-    });
+    console.log(result.reduce((count, movie) => {
+      return movie.characters.find(character => character.endsWith('/18/'))
+        ? count + 1
+        : count;
+    }, 0));
   }
 });
