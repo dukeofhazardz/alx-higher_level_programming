@@ -14,18 +14,17 @@ request(url, function (error, response, body) {
     console.log(error);
   } else {
     const characters = JSON.parse(body).characters;
-    const promises = [];
-    for (const character of characters) {
-      promises.push(new Promise(function (resolve, reject) {
-	request(character, function (error, response, body) {
-	  if (!error) {
-	    console.log(JSON.parse(body).name);
-	 }
-      });
-      }));
-    }
-    Promise.all(promises).then((a) => {
-      for (const i of a) { console.log(i); }
-    });
+    printCharacters(characters, 0);
   }
 });
+
+function printCharacters (characters, index) {
+  request(characters[index], function (error, response, body) {
+    if (!error) {
+      console.log(JSON.parse(body).name);
+      if (index + 1 < characters.length) {
+        printCharacters(characters, index + 1);
+      }
+    }
+  });
+}
